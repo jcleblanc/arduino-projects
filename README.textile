@@ -1,0 +1,15 @@
+h1. Arduino Projects
+
+The following are random arduino hardware projects, covering integrations with:
+* Johnny 5 (Node.js)
+* Web API integrations
+* Temboo
+
+h2. Projects
+
+Below are a list of the projects currently available, and their integration types.
+
+*Joystick Controlled Servo Motor (joystick-controlled-servo.js)*
+Controll the CW and CCW movement of a servo motor with a joystick microcontroller.  Requirements:
+* Hardware: Servo motor, joystick
+* Language: Node.js (Johnny 5 library)
