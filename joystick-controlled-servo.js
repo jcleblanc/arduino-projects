@@ -17,11 +17,6 @@ board.on("ready", function(){
       type: "continuous"
     }).stop();
   
-    //inject joystick hardware into repl instance to allow command line access
-    board.repl.inject({
-      joystick: joystick
-    });
-
     //on joystick move event
     joystick.on("axismove", function(err, timestamp) {
         //capture x axis movement
