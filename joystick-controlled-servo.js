@@ -1,5 +1,5 @@
 var five = require("../lib/johnny-five.js"),
-    board, joystick;
+    board, joystick, servo;
 
 board = new five.Board();
 
@@ -11,16 +11,13 @@ board.on("ready", function(){
     });
     
     //new servo motor hardware instance
-    var servo = new five.Servo({
+    servo = new five.Servo({
       pin: "10",
       type: "continuous"
     }).stop();
 
     //on joystick move event
     joystick.on("axismove", function(err, timestamp) {
-        //capture x axis movement
-        this.fixed.x;
-        
         //if axis moved right, 
         if (this.fixed.x > 0.8){ servo.cw(); }
         else if (this.fixed.x < 0.2){ servo.ccw(); }
