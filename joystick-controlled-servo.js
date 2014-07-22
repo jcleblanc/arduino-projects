@@ -1,5 +1,4 @@
 var five = require("../lib/johnny-five.js"),
-    keypress = require("keypress"),
     board, joystick;
 
 board = new five.Board();
@@ -16,7 +15,7 @@ board.on("ready", function(){
       pin: "10",
       type: "continuous"
     }).stop();
-  
+
     //on joystick move event
     joystick.on("axismove", function(err, timestamp) {
         //capture x axis movement
@@ -25,9 +24,5 @@ board.on("ready", function(){
         //if axis moved right, 
         if (this.fixed.x > 0.8){ servo.cw(); }
         else if (this.fixed.x < 0.2){ servo.ccw(); }
-    
-        //console.log("X:", this.fixed.x);
-        //console.log("Y:", this.fixed.y);
-        //console.log("MAG:", this.magnitude);
     });
 });
